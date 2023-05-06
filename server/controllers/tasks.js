@@ -31,10 +31,12 @@ export const createTask = async(req, res) => {
 }
 
 
-//GET TASK
+//GET TASK (find all the user's tasks)
 export const getTasks = async(req,res) => {
 
 try{
+
+    
 
     const {user} = req.params
 
@@ -48,4 +50,41 @@ catch(err){
     res.status(404).json({ message: err.message })
 }
 
+}
+
+
+//GET SINGLE TASK 
+
+export const getSingleTask = async(req,res) => {
+
+
+    try{
+
+        const {id} = req.parms
+
+        const task = Posts.find({_id: id})
+
+        res.status(200).json(task)
+
+    }
+    catch(err){
+        console.log("TRYING 404")
+        res.status(404).json({ message: err.message })
+    }
+
+}
+
+
+//Delete task
+
+export const deleteTask = async(req, res) => {
+
+    try{
+
+        const {id} = req.parms
+
+        Posts.deleteOne({_id: id})
+
+    }
+    catch(err){}
 }
