@@ -15,7 +15,7 @@ app.use("/auth", authRoutes)
 app.use("/tasks", taskRoutes)
 
 //Mongoose setup
-const PORT = 3000 || 6000
+const PORT = 3001 || 6001
 
 mongoose.connect("mongodb+srv://omarshah:omar123@cluster0.5tlflqu.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
