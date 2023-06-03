@@ -1,17 +1,17 @@
 import express from "express";
-import { getTasks, getSingleTask } from "../controllers/tasks.js";
+import { getTasks, getSingleTask, deleteTask } from "../controllers/tasks.js";
 import { verifyToken } from "../middleware/auth.js";
 
 const router = express();
 
 
 //GET POSTS route
-router.post("/", verifyToken, getTasks);
+router.get("/:userId/tasks", getTasks);
 
 
 //Get single post route
-router.post("/task", verifyToken, getSingleTask)
+router.post("/:taskId/task", getSingleTask)
 
-router.post("")
+router.post("/:taskId/delete", deleteTask)
 
 export default router

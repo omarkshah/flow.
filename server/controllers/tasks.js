@@ -34,21 +34,19 @@ export const createTask = async(req, res) => {
 //GET TASK (find all the user's tasks)
 export const getTasks = async(req,res) => {
 
-try{
+    try{
+        const {userId} = req.params
 
-    
+        const task = await Task.find({userId: userId})
 
-    const {user} = req.params
+        res.status(200).json(task)
 
-    const task = Posts.find({userId: user })
-
-    res.status(200).json(task)
-
-}
-catch(err){
-    console.log("TRYING 404")
-    res.status(404).json({ message: err.message })
-}
+    }
+    catch(err){
+        console.log("TRYING 404")
+        console.log(err)
+        res.status(404).json({ message: err.message })
+    }
 
 }
 
@@ -60,9 +58,9 @@ export const getSingleTask = async(req,res) => {
 
     try{
 
-        const {id} = req.parms
+        const {id} = req.params
 
-        const task = Posts.find({_id: id})
+        const task = Task.find({_id: id})
 
         res.status(200).json(task)
 
