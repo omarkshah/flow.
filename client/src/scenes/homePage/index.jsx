@@ -15,7 +15,7 @@ const HomePage = () => {
                         
                         <Box></Box>
 
-                        <Box style={{ width: "50%", padding: "1rem", margin: "1rem", backgroundColor: "red"}}>
+                        <Box style={{ width: "50%", padding: "1rem", margin: "auto"}}>
                             <Tasks />
                         </Box>
                         

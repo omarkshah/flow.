@@ -79,10 +79,46 @@ export const deleteTask = async(req, res) => {
 
     try{
 
-        const {id} = req.parms
+        const {joe} = req.params;
 
-        Posts.deleteOne({_id: id})
+        // const user = (Task.findOne({_id: taskId})).userId;
 
+        // const newUser = [];
+        
+        // for(var i = 0; i < user.length; i++){
+
+        //     if(user[i] != userId){
+        //         newUser.push(user[i]);
+        //     }
+
+        // }
+        
+        // if(newUser.length != 0){
+        //     await Task.updateOne({_id: taskId},
+        //         {
+        //             $set: { _id: newUser},
+        //             $currentDate: { lastModified: true }
+        //         });
+        //     const task = await newTask.find({userId: [userId]})
+        //     res.status(200).json(task)
+            
+    
+        // }
+        // else{
+        //     await Posts.deleteOne({_id: taskId});
+        //      const task = await newTask.find({userId: [userId]})
+        //     res.status(200).json(task);
+        // }
+        await Task.deleteOne({_id: joe});
+
+        
+        // const task = await Task.find({tas: joe})
+
+        res.status(200).json("hello");
+       
     }
-    catch(err){}
+    catch(err){
+        res.status(404).json({ message: err.message })
+        console.log(`bruh ${err}`)
+    }
 }

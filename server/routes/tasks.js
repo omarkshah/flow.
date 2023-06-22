@@ -10,8 +10,8 @@ router.get("/:userId/tasks", getTasks);
 
 
 //Get single post route
-router.post("/:taskId/task", getSingleTask)
+router.post("/:taskId/task", getSingleTask);
 
-router.post("/:taskId/delete", deleteTask)
+router.post("/:userId/:taskId/delete", deleteTask);
 
 export default router

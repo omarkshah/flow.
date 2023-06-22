@@ -14,12 +14,16 @@ const Tasks = () => {
 
     //Getting all the posts here
 
-   const userId = "123445"
+    const user = useSelector((state) => state.user)
+    console.log(`bruh ${user}`);
+    // const userId = user._id;
+    const userId = '123445'
     const getTasks = async() => {
         const response = await fetch(
             `http://localhost:3001/tasks/${userId}/tasks`,
             {
-            method: "GET"
+            method: "GET",
+            headers: { Authorization: `Bearer ${token}` },
             }
         );
         const data = await response.json();
@@ -35,11 +39,14 @@ const Tasks = () => {
     //mapping all the posts to a post here in the return
     return (
 
-       <>
+       <Box style={{
+            margin: "auto"
+
+       }}>
 
 
 
-        {/* { tasks.map(
+         { tasks.map(
             ({
             _id,
             title,
@@ -51,9 +58,9 @@ const Tasks = () => {
                 date={date}
             />
             )
-        )}  */}
+        )}  
 
-        </>
+        </Box>
 
 
     )
