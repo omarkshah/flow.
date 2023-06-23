@@ -79,8 +79,17 @@ export const deleteTask = async(req, res) => {
 
     try{
 
-        const {joe} = req.params;
+        const {userId, taskId} = req.params;
 
+        const users = Task.findOne({_id: taskId}).userId;
+        const newUser = [];
+
+        for(var i = 0; i < users.length;i++){
+            if(users[i] != userId){
+                newUser.push
+            }
+        }
+        
         // const user = (Task.findOne({_id: taskId})).userId;
 
         // const newUser = [];
