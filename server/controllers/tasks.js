@@ -79,50 +79,34 @@ export const deleteTask = async(req, res) => {
 
     try{
 
-        const {userId, taskId} = req.params;
+        const {user, taskId} = req.params;
 
-        const users = Task.findOne({_id: taskId}).userId;
+        const users = (await Task.findOne({_id: taskId})).userId;
         const newUser = [];
 
-        for(var i = 0; i < users.length;i++){
-            if(users[i] != userId){
-                newUser.push
-            }
+
+        if(users.length == 1){
+            await Task.deleteOne({_id: taskId});
         }
-        
-        // const user = (Task.findOne({_id: taskId})).userId;
-
-        // const newUser = [];
-        
-        // for(var i = 0; i < user.length; i++){
-
-        //     if(user[i] != userId){
-        //         newUser.push(user[i]);
-        //     }
-
-        // }
-        
-        // if(newUser.length != 0){
-        //     await Task.updateOne({_id: taskId},
-        //         {
-        //             $set: { _id: newUser},
-        //             $currentDate: { lastModified: true }
-        //         });
-        //     const task = await newTask.find({userId: [userId]})
-        //     res.status(200).json(task)
+        else{     
             
-    
-        // }
-        // else{
-        //     await Posts.deleteOne({_id: taskId});
-        //      const task = await newTask.find({userId: [userId]})
-        //     res.status(200).json(task);
-        // }
-        await Task.deleteOne({_id: joe});
-
+            for(var i = 0; i < users.length;i++){
+                if(users[i] != user){
+                    newUser.push(users[i])
+                }
+            }   
         
-        // const task = await Task.find({tas: joe})
+        
 
+            await Task.updateOne({_id:taskId},{
+                $set: {
+                userId: newUser
+                },
+                $currentDate: { lastUpdated: true }
+            });
+        }
+
+   
         res.status(200).json("hello");
        
     }

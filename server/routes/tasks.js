@@ -12,6 +12,6 @@ router.get("/:userId/tasks", getTasks);
 //Get single post route
 router.post("/:taskId/task", getSingleTask);
 
-router.post("/:userId/:taskId/delete", deleteTask);
+router.post("/:user/:taskId/delete", deleteTask);
 
 export default router
