@@ -28,11 +28,11 @@ import {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // const user = useSelector((state) => state.user);
+    const user = useSelector((state) => state.user);
 
-    // const fullName = `${user.firstName} ${user.lastName}`
+    const fullName = `${user.firstName} ${user.lastName}`
 
-    const fullName = "Omar Shah"
+    // const fullName = "Omar Shah"
     return(
 
         <FlexBetween padding="1rem 6%" style={{

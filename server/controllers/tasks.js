@@ -79,7 +79,8 @@ export const deleteTask = async(req, res) => {
 
     try{
 
-        const {user, taskId} = req.params;
+        // console.log("sfsfasfjkasdfl;akjsf;ladksjfa");
+        const {userId, taskId} = req.params;
 
         const users = (await Task.findOne({_id: taskId})).userId;
         const newUser = [];
@@ -91,7 +92,7 @@ export const deleteTask = async(req, res) => {
         else{     
             
             for(var i = 0; i < users.length;i++){
-                if(users[i] != user){
+                if(users[i] != userId){
                     newUser.push(users[i])
                 }
             }   
@@ -112,6 +113,6 @@ export const deleteTask = async(req, res) => {
     }
     catch(err){
         res.status(404).json({ message: err.message })
-        console.log(`bruh ${err}`)
+        console.log(`bruh wha thte hell boi ${err}`)
     }
 }

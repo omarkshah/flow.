@@ -12,8 +12,8 @@ export const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
-        setLogin: (state) => {
-            state.user = {firstName: "omar", lastName: "shah", _id:"123445"}
+        setLogin: (state, action) => {
+            state.user = action.payload.user
             state.token = null
         },
         setLogout: (state) => {

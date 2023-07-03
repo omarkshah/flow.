@@ -12,6 +12,7 @@ const Post = ({title, date, taskId }) => {
 
     const dispatch = useDispatch();
     const tasks = useSelector((state) => state.tasks);
+    const user = (useSelector((state) => state.user));
     const token = useSelector((state) => state.token);
 
 
@@ -23,16 +24,20 @@ const Post = ({title, date, taskId }) => {
         color = "DC6060"
     }
     
+
     const deleteTask = async() => {
 
 
         const response = await fetch(
-            `http://localhost:3001/tasks/${taskId}/delete`, 
+            `http://localhost:3001/tasks/${user._id}/${taskId}/delete`, 
             {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` },
             }
         );
+
+
+        window.location.reload(false)   
 
     }
 
@@ -44,7 +49,7 @@ const Post = ({title, date, taskId }) => {
 
     return (
     
-        <Box onClick={()=>{console.log("bruh u just clicked this ")}} style={{
+        <Box id={taskId} style={{
             backgroundColor: `#${color}`,
             padding: "2rem",
             margin: "1rem",
@@ -65,10 +70,10 @@ const Post = ({title, date, taskId }) => {
                 
             <Box style={{display: "flex", }}>
                
-                <Button style={{
+                <Button  style={{
                     backgroundColor: "white",
                     color: "black",
-                }} onClick={() => { deleteTask(); window.location.reload(false) }}> 
+                }} onClick={() => { console.log("bruhruohe"); deleteTask()  }}> 
                     <Delete /> 
                 </Button>
 

@@ -15,9 +15,9 @@ const Tasks = () => {
     //Getting all the posts here
 
     const user = useSelector((state) => state.user)
-    console.log(`bruh ${user}`);
-    // const userId = user._id;
-    const userId = '123445'
+    console.log(`slim jim is :  ${user._id}`); //GET RID OF THIS TESTING CODE LATER PLEASE FOR THE LOVE OF GOD REMEMEBR OR THIS WOULD BE EMBARRISING ON GITHUB
+    const userId = user._id;
+
     const getTasks = async() => {
         const response = await fetch(
             `http://localhost:3001/tasks/${userId}/tasks`,
@@ -26,11 +26,12 @@ const Tasks = () => {
             headers: { Authorization: `Bearer ${token}` },
             }
         );
+        
         const data = await response.json();
 
-        console.log(data);
         dispatch(setPosts({ tasks: data }));
     }
+
     useEffect(() => {
         getTasks();
       }, []); // Empty dependency array
