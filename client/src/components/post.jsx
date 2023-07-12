@@ -73,7 +73,7 @@ const Post = ({title, date, taskId }) => {
                 <Button  style={{
                     backgroundColor: "white",
                     color: "black",
-                }} onClick={() => { console.log("bruhruohe"); deleteTask()  }}> 
+                }} onClick={() => { deleteTask() }}> 
                     <Delete /> 
                 </Button>
 
