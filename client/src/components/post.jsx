@@ -16,12 +16,14 @@ const Post = ({title, date, taskId }) => {
     const token = useSelector((state) => state.token);
 
 
-    var color = "a9c3ac"
-    
+    //Changing task colour based on due date
+    var color = "DC6060"
     const currDate = new Date();
-    const d = new Date("2015-03-25");
-    if(currDate > d){
-        color = "DC6060"
+    const d = new Date(date);
+    // const d = new Date("2015-03-25");
+    if(currDate < d){
+        console.log("changing the colour")
+        color = "a9c3ac"
     }
     
 

@@ -34,11 +34,12 @@ import {
 
     // const fullName = "Omar Shah"
     return(
-
+    
         <FlexBetween padding="1rem 6%" style={{
             backgroundColor: "#a9c3ac",
             borderRadius: "10px"
             }}>
+
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"/>    
                 
                 <FlexBetween padding={1} style={{

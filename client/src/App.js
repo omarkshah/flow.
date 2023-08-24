@@ -12,7 +12,7 @@ function App() {
   // dispatch(setLogin({user: {firstName: "omar", lastName: "shah", _id: "123445"} }))
 
   return (
-    <div className="app" style={{paddingBottom: "47rem", backgroundColor: "black"}}>
+    <div className="app" style={{paddingBottom: "47rem", backgroundColor: "white"}}>
       
       <BrowserRouter>
         <Routes>

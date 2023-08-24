@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
   })
 
 import { getTasks } from './controllers/tasks.js';
+import Task from './models/Task.js';
 
 
 //Mongoose setup
@@ -49,13 +50,13 @@ mongoose.connect("mongodb+srv://omarshah:omar123@cluster0.5tlflqu.mongodb.net/?r
 
 
 
-//Task add test 
+// Task add test 
 // const newTask = new Task({
 
-//     userId: "omar",
+//     userId: "123445",
 //     title: "k boss",
 //     description: "bruh this a test",
-//     date: new Date().getMonth(),
+//     date: new Date("2024-10-13"),
 // })
 
 // await newTask.save().then(() => console.log("saved"))

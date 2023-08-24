@@ -1,8 +1,8 @@
 import { green } from "@mui/material/colors";
 import Navbar from "../../components/navbar";
 import { Box, useMediaQuery } from "@mui/material";
-import Post from "../../components/post";
 import Tasks from "../../components/tasks";
+import NewPost from "../../components/newPost";
 
 const HomePage = () => {
     return (
@@ -11,10 +11,13 @@ const HomePage = () => {
             <Navbar />
 
 
+                    <Box style={{ width: "50%", padding: "1rem", margin: "auto"}}>
+                        <NewPost />
+                    </Box>
+
                     <Box style={{display: "flex", justify: "center"}}>
                         
-                        <Box></Box>
-
+                       
                         <Box style={{ width: "50%", padding: "1rem", margin: "auto"}}>
                             <Tasks />
                         </Box>

@@ -9,10 +9,14 @@ export const createTask = async(req, res) => {
     try{
         const {userId, title, description, date} = req.body;
 
-        const users  = [userId]
+        
+
+        // const users  = [userId, "omar"]
+
+        // console.log(users[0])
 
         const newTask = new Task({
-            users,
+            userId,
             title,
             description, 
             date
@@ -20,11 +24,12 @@ export const createTask = async(req, res) => {
 
         await newTask.save();
 
-        const task = await newTask.find({userId: [userId]})
+        const task = await Task.find({userId: userId})
 
         res.status(201).json(task);
 
     }catch(err){
+        console.log(err.message);
         res.status(409).json({ message: err.message })
     }
 
