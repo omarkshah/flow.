@@ -50,20 +50,21 @@ const NewPost = () => {
             {/* TOP BOX */}
             <Box style={{ display: "flex" }}>
 
-                <InputBase placeholder="Enter Task Title" style={{ margin: "1rem", padding: "0.5rem", backgroundColor: "#FFFFFF", flexGrow: "8", borderRadius: "10px" }}  onChange={(e) => setTitle(e.target.value)} value={title}>
+                <InputBase multiline="true" placeholder="Enter Task Title" style={{ margin: "1rem", padding: "0.5rem", backgroundColor: "#FFFFFF", flexGrow: "8", borderRadius: "10px" }}  onChange={(e) => setTitle(e.target.value)} value={title}>
                 
                 </InputBase>
 
-                <InputBase placeholder="yyyy-mm-dd" style={{ margin: "1rem",padding: "0.5rem", backgroundColor: "#FFFFFF", flexGrow: "1", borderRadius: "10px" }} onChange={(e) => setDate(e.target.value)} value={date}> </InputBase>
+                <InputBase multiline="true" placeholder="yyyy-mm-dd" style={{ margin: "1rem",padding: "0.5rem", backgroundColor: "#FFFFFF", flexGrow: "1", borderRadius: "10px" }} onChange={(e) => setDate(e.target.value)} value={date}> </InputBase>
 
 
             </Box>
 
             {/* BOTTOM BOX */}
             <Box style={{ display: "flex"}}>
-                <InputBase placeholder="Describe Your Task Here..." style={{ margin: "1rem",padding: "0.5rem", backgroundColor: "#FFFFFF", flexGrow:"7", borderRadius: "10px"}} onChange={(e) => setDescription(e.target.value)} value={description}></InputBase>
+                <InputBase multiline="true" placeholder="Describe Your Task Here..." style={{ margin: "1rem",padding: "0.5rem", backgroundColor: "#FFFFFF", flexGrow:"7", borderRadius: "10px"}} onChange={(e) => setDescription(e.target.value)} value={description}></InputBase>
                 
             </Box>
+            
             <Button  style={{margin: "1rem", padding: "0.5rem", backgroundColor: "white", color: "black", flexGrow: "1" }} onClick={()=>handleTask()}> Post </Button>
            
 
