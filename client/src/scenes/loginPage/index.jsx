@@ -1,30 +1,34 @@
 
-import { Box, Button, InputBase } from "@mui/material";
+import { Box, Button, InputBase, Typography } from "@mui/material";
 const LoginPage = () => {
 
     document.body.backgroundColor = "red"
 
     return (
-        
+            
         <Box style={{
-            padding: "2rem",
-            margin: "1rem",
+            backgroundColor: "#a9c3ac",
+            padding: "5rem",
+            margin: "15rem",
+            fontSize: "20px",
             borderRadius: "10px",
-            size: "10rem",
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: "100vh"
+            alignitems: "center",
+            justifyContent: "center"
         }}>
             
-                <Box style={{
-                    backgroundColor: "#a9c3ac",
-                    padding: "2rem",
-                    margin: "1rem",
-                    borderRadius: "10px",
-                }}>
+            <Box style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center"
+            }}>
 
-                </Box>
+                <Typography padding={0} margin={0} fontFamily={"Roboto"} fontWeight={700} fontSize={40} color={"white"}>flow.</Typography>
+                
+                <Box>Some words</Box>
+            
+            </Box>
 
         </Box>
 
